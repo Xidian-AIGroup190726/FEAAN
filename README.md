@@ -9,7 +9,7 @@ The network consists of a dual-branch encoder, feature differentiation units, FA
 
 ![Network Architecture Table](FEAAN.png)
 
-Table 1 lists the inputs, processing steps, and outputs of each module using multispectral patches of size \(16\times16\times4\) and panchromatic patches of size \(64\times64\times1\) as examples. Feature map sizes are given as height \(\times\) width \(\times\) number of channels.
+The table lists the inputs, processing steps, and outputs of each module using multispectral patches of size \(16\times16\times4\) and panchromatic patches of size \(64\times64\times1\) as examples. Feature map sizes are given as height \(\times\) width \(\times\) number of channels.
 
 ### Dual-branch Encoder
 
