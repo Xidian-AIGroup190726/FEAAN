@@ -26,22 +26,22 @@ The network consists of a dual-branch encoder, feature differentiation units, FA
 </tr>
 <tr>
 <td>\(f_m^{(1)}\ (16 \times 16 \times 64)\)<br>\(f_p^{(1)}\ (64 \times 64 \times 64)\)</td>
-<td>\(\left[ \begin{array}{c} 1 \times 1 \quad 64 \\ 3 \times 3 \quad 64 \\ 1 \times 1 \quad 256 \end{array} \right] \times 3\)</td>
+<td>\(\begin{bmatrix} 1 \times 1 & 64 \\\\ 3 \times 3 & 64 \\\\ 1 \times 1 & 256 \end{bmatrix} \times 3\)</td>
 <td>\(f_m^{(2)}\ (16 \times 16 \times 256)\)<br>\(f_p^{(2)}\ (64 \times 64 \times 256)\)</td>
 </tr>
 <tr>
 <td>\(f_m^{(2)}\ (16 \times 16 \times 256)\)<br>\(f_p^{(2)}\ (64 \times 64 \times 256)\)</td>
-<td>\(\left[ \begin{array}{c} 1 \times 1 \quad 128 \\ 3 \times 3 \downarrow 2 \quad 128 \\ 1 \times 1 \quad 512 \end{array} \right] \to \left[ \begin{array}{c} 1 \times 1 \quad 128 \\ 3 \times 3 \quad 128 \\ 1 \times 1 \quad 512 \end{array} \right] \times 3\)</td>
+<td>\(\begin{bmatrix} 1 \times 1 & 128 \\\\ 3 \times 3 \downarrow 2 & 128 \\\\ 1 \times 1 & 512 \end{bmatrix} \to \begin{bmatrix} 1 \times 1 & 128 \\\\ 3 \times 3 & 128 \\\\ 1 \times 1 & 512 \end{bmatrix} \times 3\)</td>
 <td>\(f_m^{(3)}\ (8 \times 8 \times 512)\)<br>\(f_p^{(3)}\ (32 \times 32 \times 512)\)</td>
 </tr>
 <tr>
 <td>\(f_m^{(3)}\ (8 \times 8 \times 512)\)<br>\(f_p^{(3)}\ (32 \times 32 \times 512)\)</td>
-<td>\(\left[ \begin{array}{c} 1 \times 1 \quad 256 \\ 3 \times 3 \downarrow 2 \quad 256 \\ 1 \times 1 \quad 1024 \end{array} \right] \to \left[ \begin{array}{c} 1 \times 1 \quad 256 \\ 3 \times 3 \quad 256 \\ 1 \times 1 \quad 1024 \end{array} \right] \times 5\)</td>
+<td>\(\begin{bmatrix} 1 \times 1 & 256 \\\\ 3 \times 3 \downarrow 2 & 256 \\\\ 1 \times 1 & 1024 \end{bmatrix} \to \begin{bmatrix} 1 \times 1 & 256 \\\\ 3 \times 3 & 256 \\\\ 1 \times 1 & 1024 \end{bmatrix} \times 5\)</td>
 <td>\(f_m^{(4)}\ (4 \times 4 \times 1024)\)<br>\(f_p^{(4)}\ (16 \times 16 \times 1024)\)</td>
 </tr>
 <tr>
 <td>\(f_m^{(4)}\ (4 \times 4 \times 1024)\)<br>\(f_p^{(4)}\ (16 \times 16 \times 1024)\)</td>
-<td>\(\left[ \begin{array}{c} 1 \times 1 \quad 512 \\ 3 \times 3 \downarrow 2 \quad 512 \\ 1 \times 1 \quad 2048 \end{array} \right] \to \left[ \begin{array}{c} 1 \times 1 \quad 512 \\ 3 \times 3 \quad 512 \\ 1 \times 1 \quad 2048 \end{array} \right] \times 2\)</td>
+<td>\(\begin{bmatrix} 1 \times 1 & 512 \\\\ 3 \times 3 \downarrow 2 & 512 \\\\ 1 \times 1 & 2048 \end{bmatrix} \to \begin{bmatrix} 1 \times 1 & 512 \\\\ 3 \times 3 & 512 \\\\ 1 \times 1 & 2048 \end{bmatrix} \times 2\)</td>
 <td>\(f_m^{(5)}\ (2 \times 2 \times 2048)\)<br>\(f_p^{(5)}\ (8 \times 8 \times 2048)\)</td>
 </tr>
 <tr>
@@ -93,7 +93,7 @@ The network consists of a dual-branch encoder, feature differentiation units, FA
 <td>\(\mathcal{L}_C\ (1)\)</td>
 </tr>
 <tr>
-<td rowspan="3"><strong>Downstream Fine-tuning Classification Part</strong></td>
+<td rowspan="3"><strong>Downstream Fine-tuning<br>Classification Part</strong></td>
 <td>\(\{f_m^{(l)}\}_{l=1}^5, \{f_p^{(l)}\}_{l=1}^5\)</td>
 <td>\([\mathbb{E}_\Omega(f_*^{(1)}); \cdots; \mathbb{E}_\Omega(f_*^{(5)})]\)<br>\(64 + 256 + 512 + 1024 + 2048 = 3904\)</td>
 <td>\(A_m\ (3904)\)<br>\(A_p\ (3904)\)</td>
