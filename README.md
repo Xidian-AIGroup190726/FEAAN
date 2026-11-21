@@ -7,7 +7,7 @@ The original manuscript describes the design of each module separately but does 
 
 The network consists of a dual-branch encoder, feature differentiation units, FAIM, ASAM, and a downstream classification component for fine-tuning. During pretraining, attribute inference and attribute-specific alignment support the learning of cross-modal representations. During fine-tuning, the pretrained encoder performs joint classification under the supervision of a small set of labeled samples.
 
-![Network Architecture Table](FEAAN.png)
+![Network Architecture Table](network.png)
 
 The table lists the inputs, processing steps, and outputs of each module using multispectral patches of size $16 \times 16 \times 4$ and panchromatic patches of size $64 \times 64 \times 1$ as examples. Feature map sizes are given as height $\times$ width $\times$ number of channels.
 
